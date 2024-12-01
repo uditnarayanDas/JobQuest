@@ -13,10 +13,11 @@ const Jobs = () => {
   useEffect(() => {
     if (searchedQuery) {
       const query = searchedQuery.toLowerCase();
-      const filteredJobs = allJobs.filter((job) =>
-        job.location?.toLowerCase().includes(query) || // Match location
-        job.title.toLowerCase().includes(query) || // Match title
-        job.description.toLowerCase().includes(query) // Match description
+      const filteredJobs = allJobs.filter(
+        (job) =>
+          job.location?.toLowerCase().includes(query) || // Match location
+          job.title.toLowerCase().includes(query) || // Match title
+          job.description.toLowerCase().includes(query) // Match description
       );
       setFilterJobs(filteredJobs);
     } else {
