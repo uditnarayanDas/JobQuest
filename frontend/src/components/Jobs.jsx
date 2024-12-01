@@ -12,12 +12,12 @@ const Jobs = () => {
 
   useEffect(() => {
     if (searchedQuery) {
-      const filteredJobs = allJobs.filter((job) => {
-        return (
-          job.title.toLowerCase().includes(searchedQuery.toLowerCase()) ||
-          job.description.toLowerCase().includes(searchedQuery.toLowerCase()) 
-        );
-      });
+      const query = searchedQuery.toLowerCase();
+      const filteredJobs = allJobs.filter((job) =>
+        job.location?.toLowerCase().includes(query) || // Match location
+        job.title.toLowerCase().includes(query) || // Match title
+        job.description.toLowerCase().includes(query) // Match description
+      );
       setFilterJobs(filteredJobs);
     } else {
       setFilterJobs(allJobs);
@@ -32,7 +32,9 @@ const Jobs = () => {
         <div className="mb-8">
           <div className="flex items-center gap-2 text-[#6A38C2] mb-2">
             <Briefcase className="w-5 h-5" />
-            <span className="text-sm font-semibold uppercase tracking-wider">Available Positions</span>
+            <span className="text-sm font-semibold uppercase tracking-wider">
+              Available Positions
+            </span>
           </div>
           <h1 className="text-4xl font-bold">
             Browse Our Latest <span className="text-[#6A38C2]">Job Openings</span>
@@ -68,7 +70,9 @@ const Jobs = () => {
             <div className="flex-1 flex items-center justify-center h-[60vh] bg-white rounded-xl border border-gray-200">
               <div className="text-center">
                 <Briefcase className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">No Jobs Found</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  No Jobs Found
+                </h3>
                 <p className="text-gray-500">Try adjusting your search filters</p>
               </div>
             </div>
