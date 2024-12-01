@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./shared/Navbar";
 import FilterCard from "./FilterCard";
 import Job from "./Job";
-import { Briefcase } from "lucide-react";
+import { Briefcase, Filter } from "lucide-react";
 import { useSelector } from "react-redux";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Jobs = () => {
   const { allJobs = [], searchedQuery = "" } = useSelector((store) => store.job);
@@ -41,9 +42,22 @@ const Jobs = () => {
           </p>
         </div>
 
-        <div className="flex gap-8">
-          {/* Filter Section */}
-          <div className="w-1/4 flex-shrink-0">
+        {/* Mobile Filter Button */}
+        <div className="lg:hidden mb-4">
+          <Sheet>
+            <SheetTrigger className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50">
+              <Filter className="w-4 h-4" />
+              Filters
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[300px] sm:w-[400px] p-0">
+              <FilterCard />
+            </SheetContent>
+          </Sheet>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Filter Section - Desktop */}
+          <div className="hidden lg:block w-1/4 flex-shrink-0">
             <div className="sticky top-8">
               <FilterCard />
             </div>
