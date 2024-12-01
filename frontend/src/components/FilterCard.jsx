@@ -1,45 +1,37 @@
-import React, { useEffect, useState } from "react";
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
-import { Label } from "./ui/label";
-import { MapPin, Briefcase } from "lucide-react";
-import { useDispatch } from "react-redux";
-import { setSearchedQuery } from "@/redux/jobSlice";
+import React, { useEffect, useState } from 'react';
+import { RadioGroup, RadioGroupItem } from './ui/radio-group';
+import { Label } from './ui/label';
+import { MapPin, Briefcase, IndianRupee } from 'lucide-react';
+import { useDispatch } from 'react-redux';
+import { setSearchedQuery } from '@/redux/jobSlice';
 
 const filterData = [
   {
-    filterType: "Location",
+    filterType: 'Location',
     icon: MapPin,
-    arrays: [
-      "delhi-ncr",
-      "gurugram",
-      "noida",
-      "bengaluru",
-      "hyderabad",
-      "pune",
-      "mumbai",
-    ], // Values must match the location field in jobs data
+    arrays: ['Delhi-NCR', 'Gurugram', 'Noida', 'Bengaluru', 'Hyderabad', 'Pune', 'Mumbai'],
   },
   {
-    filterType: "Industry",
+    filterType: 'Industry',
     icon: Briefcase,
     arrays: [
-      "Frontend Developer",
-      "Backend Developer",
-      "UI/UX Designer",
-      "Product Manager",
-      "Data Scientist",
-      "Software Engineer",
-      "Software Development Engineer",
-      "Full Stack Developer",
-      "AI/ML Engineer",
-      "Accountant",
+      'Frontend Developer',
+      'Backend Developer',
+      'UI/UX Designer',
+      'Product Manager',
+      'Data Scientist',
+      'Software Engineer',
+      'Software Development Engineer',
+      'Full Stack Developer',
+      'AI/ML Engineer',
+      'Accountant',
     ],
   },
 ];
 
 const FilterCard = () => {
   const dispatch = useDispatch();
-  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValue, setSelectedValue] = useState('');
 
   const changeHandler = (value) => {
     setSelectedValue(value);
