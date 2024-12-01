@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({ extended:true }));
 app.use(cookie());
 const corsOptions = {
-    origin: 'https://jobquest-2sez.onrender.com',
+    origin: 'https:localhost:3000',
     credentials:true
 }
 app.use(cors(corsOptions));

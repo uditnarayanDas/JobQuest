@@ -9,7 +9,7 @@ const filterData = [
   {
     filterType: "Location",
     icon: MapPin,
-    arrays: ["Delhi-NCR", "Gurugram", "Noida", "Bangalore", "Hyderabad", "Pune", "Mumbai"],
+    arrays: ["Delhi-NCR", "Gurugram", "Noida", "Bengaluru", "Hyderabad", "Pune", "Mumbai"],
   },
   {
     filterType: "Industry",
@@ -21,6 +21,7 @@ const filterData = [
       "Product Manager",
       "Data Scientist",
       "Software Engineer",
+      "Software Development Engineer",
       "Full Stack Developer",
       "AI/ML Engineer",
       "Accountant",
