@@ -33,7 +33,7 @@ JobQuest is a modern job board platform built with React, TypeScript, and Tailwi
 - **HTTP Client:** Axios
 - **Date Handling:** date-fns
 - **Notifications:** Sonner
-- **Charts:** Recharts
+- **Backend Framework:** Express.js, Node.js, MongoDB
 
 ## 🚀 Getting Started
 
