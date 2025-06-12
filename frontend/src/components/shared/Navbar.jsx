@@ -196,14 +196,14 @@ const Navbar = () => {
                     <h2 className="text-xl font-semibold bg-gradient-to-r from-[#f83002] to-[#ff6b4d] bg-clip-text text-transparent">
                       Menu
                     </h2>
-                    <Button
+                    {/* <Button
                       variant="ghost"
                       size="icon"
                       onClick={() => setIsOpen(false)}
                       className="hover:bg-gray-100"
                     >
                       <X className="h-5 w-5" />
-                    </Button>
+                    </Button> */}
                   </div>
                   {user ? (
                     <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
